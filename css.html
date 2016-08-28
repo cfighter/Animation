@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style type="text/css">
+    /* .example{		
+		width: 100px;
+		height:100px;
+		background-color: red;
+		border-radius: 50%;
+		background-image: linear-gradient(to right,transparent 50%,#655 0);
+	}
+	.example::before{
+		content:'';
+		display: block;
+		margin-left: 50%;
+		height:100%;
+		background-color: inherit;		
+		border-radius: 0 100% 100% 0/50%;
+		transform-origin:left;
+		transform:rotate(.1turn);
+	
+	} */
+    
+    * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        font-size: 20px;
+    }
+    
+    .wrap {
+        width: 60%;
+        height: 200px;
+        margin: 50px auto;
+        background-color: #fff;
+    }
+    
+    .wrap h1 {
+        text-align: center;
+        line-height: 200px;
+        font-size: 20px;
+    }
+    
+    .effect {
+        position: relative;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, .3), 0 0 40px rgba(0, 0, 0, .1) inset;
+    }
+    
+    .effect:after,
+    .effect:before {
+        z-index: -1;
+        content: '';
+        background: #fff;
+        position: absolute;
+        top: 50%;
+        bottom: 0;
+        left: 10px;
+        right: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, .8);
+        border-radius: 100px/10px;
+    }
+    .videos {
+        display: flex;
+        display: -webkit-flex;
+        -webkit-justify-content: center;
+        justify-content: center;
+        margin: 20px auto;
+        list-style: none;
+        text-align: center;
+    }    
+    .videos li {
+        background-color: #fff;
+        display: inline-block;
+        padding: 5px;
+        margin-right: 20px;
+        width: 300px;
+        float: left;
+        position: relative;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, .8), 0 0 40px rgba(0, 0, 0, .1) inset;
+    }
+    
+    .videos li:before {
+        z-index: -1;
+        display: block;
+        content: '';
+        position: absolute;
+        width: 90%;
+        height: 85%;
+        left: 20px;
+        bottom: 9px;
+        background-color: transparent;
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, .8);
+        transform: skew(-12deg) rotate(-5deg);
+    }
+    
+    .videos li video {
+        width: 100%;
+    }
+    /* .pictures li img {
+        width: 100%;
+    } */
+    .D{
+    	-webkit-perspective:800;
+    	-webkit-perspective-origin:50% 50%;  	
+   
+    	overflow: hidden;
+  
+    }
+    #page-group{
+    	-webkit-transform-style:-webkit-preserve-3d;
+    	width: 200px;
+    	height: 200px;  
+    	position: relative;
+    }
+    .page:not(:first-child){    	
+    	-webkit-transform:rotateX(110deg);
+    }
+    .page{   
+    	-webkit-transform-origin:bottom;
+    	-webkit-transition:-webkit-transform 1s linear;	
+    	padding:0; 
+    	width: 200px;
+    	height: 200px;
+    	line-height: 200px;
+    	background-color: #000;
+    	color: #fff;
+    	text-align: center;
+    	font-size: 130px;
+    	font-weight: bold;
+    	position: absolute;
+    }
+    .operation{
+		clear:both;
+    }
+    .operation input{
+     	width: 80px;
+     	margin: 20px;
+     	padding: 5px 20px;
+     }
+     .title{
+     	text-align: center;
+     }
+     .pictures-wall{
+     	clear: both;
+     	position: relative;
+     	margin: 20px auto;
+     	width:1200px;
+     	height:600px;
+     } 
+     .pictures-wall img{
+     	position: absolute;
+     	padding: 15px;
+     	border-radius: 5px;
+     	background-color: #fff;
+     	border: 1px solid #cccccc;
+     	box-shadow: 0px 0px 15px;
+     	-webkit-transform:scale(0.8);
+     	-webkit-transition:-webkit-transform 1s linear;	
+	
+     }
+     .pictures-wall img:hover{  
+     z-index: 400;   	 
+		-webkit-transform:rotate(0deg) scale(1.0);
+     }
+     .pictures-wall .img1{
+     	left:30px;
+     	top: 40px;
+     	-webkit-transform:rotate(25deg) scale(0.8);
+      
+     }
+     .pictures-wall .img2{
+     	left:330px;
+     	top: 40px;
+     	-webkit-transform:rotate(5deg) scale(0.8);
+     }
+     .pictures-wall .img3{
+     	left: 650px;
+     	top:30px;
+     	-webkit-transform:rotate(-45deg) scale(0.8);
+     }
+     .pictures-wall .img4{
+     	left:30px;
+     	top: 340px; 
+     	-webkit-transform:rotate(15deg) scale(0.8);
+     }
+     .pictures-wall .img5{
+     	left:800px;
+     	top: 330px;  
+     	-webkit-transform:rotate(-20deg) scale(0.8);
+     }
+     .pictures-wall .img6{
+     	left:400px;
+     	top: 340px;  
+     	-webkit-transform:rotate(5deg) scale(0.8);
+     }
+          .pictures-wall .img7{
+     	left:130px;
+     	top: 140px; 
+     	-webkit-transform:rotate(15deg) scale(0.8);
+     }
+     .pictures-wall .img8{
+     	left:700px;
+     	top: 230px;  
+     	-webkit-transform:rotate(-20deg) scale(0.8);
+     }
+     .pictures-wall .img9{
+     	left:400px;
+     	top: 240px;  
+     	-webkit-transform:rotate(5deg) scale(0.8);
+     }
+
+    </style>
+    <script src="http://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="wrap effect">
+        <h1>Shadow effect</h1>
+    </div>
+  
+    <ul class="videos">
+        <!--  <li><img src="1.jpg" alt="">
+           </li>
+           <li><img src="1.jpg" alt="">
+           </li>
+           <li><img src="1.jpg" alt="">
+           </li> -->
+        <li>
+            <video controls poster='poster.png' >
+                <source src="F:\娱乐\画江湖\1.mp4" type="video/mp4"> 您的浏览器不支持 video 标签。
+            </video>
+            <!-- <video src="F:\娱乐\画江湖\1.mp4" type="video/mp4"></video> -->
+        </li>
+        <li>
+            <video controls poster='poster.png'>
+                <source src="F:\娱乐\画江湖\2.mp4" type="video/mp4"> 您的浏览器不支持 video 标签。
+            </video>
+        </li>
+        <li>
+            <video controls poster='poster.png'>
+                <source src="F:\娱乐\画江湖\3.mp4" type="video/mp4"> 您的浏览器不支持 video 标签。
+            </video>
+        </li>
+    </ul>    
+    <div class="container">
+        <div class="wrapper">
+            <div class="item">
+                <a href="#bg1">
+                    <img src="http://www.1tong.com/uploads/wallpaper/distinct/280-5-1920x1200.jpg" height="220" width="391" alt="">
+                    <div class="info">
+                        <h2>标题</h2>
+                        <p>描述内容，详细信息</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="item">
+                <a href="#bg2">
+                    <img src="http://imgsrc.baidu.com/forum/pic/item/32fa828ba61ea8d3f704e94c970a304e251f5857.jpg" alt="">
+                    <div class="info">
+                        <h2>标题</h2>
+                        <p>描述内容，详细信息</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="item">
+                <a href="#bg3">
+                    <img src="http://www.bz55.com/uploads/allimg/140724/138-140H4112625.jpg" alt="">
+                    <div class="info">
+                        <h2>标题</h2>
+                        <p>描述内容，详细信息</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="bg-choose">
+    <img src="http://www.1tong.com/uploads/wallpaper/distinct/280-5-1920x1200.jpg" alt="" class="bg" id="bg1" />
+        <img src="http://imgsrc.baidu.com/forum/pic/item/32fa828ba61ea8d3f704e94c970a304e251f5857.jpg" alt="" class="bg" id="bg2" />
+        <img src="http://www.bz55.com/uploads/allimg/140724/138-140H4112625.jpg" alt="" class="bg" id="bg3" />
+        
+    </div>
+    <div class="D container">
+    	<div id="page-group">
+    		<div class="page" id="page1">1</div>
+    		<div class="page" id="page2">2</div>
+    		<div class="page" id="page3">3</div>
+    		<div class="page" id="page4">4</div>
+    		<div class="page" id="page5">5</div>
+    		<div class="page" id="page6">6</div>
+    	</div>
+    </div>
+    <div class="operation container">
+    	<input type="button"value="Pre" onclick="pre()"><input type="button" value="Next" onclick="next()">
+    </div>
+    <h3 class='title'>
+    	照片墙
+    </h3>
+    <div class="pictures-wall container">
+    	<img src="./images/1.jpg" alt="" class="img-item img1">
+    	<img src="./images/2.jpg" alt="" class="img-item img2">
+    	<img src="./images/3.jpg" alt="" class="img-item img3">
+    	<img src="./images/4.jpg" alt="" class="img-item img4">
+    	<img src="./images/5.jpg" alt="" class="img-item img5">
+    
+    	<img src="./images/4.jpg" alt="" class="img-item img6">
+    	<img src="./images/5.jpg" alt="" class="img-item img7">
+    	<img src="./images/6.jpg" alt="" class="img-item img8">
+    	<img src="./images/6.jpg" alt="" class="img-item img9">
+    </div>
+    <div class="box">
+    	<div class="link link-mission">
+			<span class="icon"></span>
+			<a href="#" class="button" data='My Mission list!'>
+				<span class="line line-top"></span>
+				<span class="line line-right"></span>
+				<span class="line line-bottom"></span>
+				<span class="line line-left"></span>
+				Mission
+			</a>    		
+    	</div>
+    	<div class="link link-mission">
+			<span class="icon"></span>
+			<a href="#" class="button" data='My Mission list!'>
+				<span class="line line-top"></span>
+				<span class="line line-right"></span>
+				<span class="line line-bottom"></span>
+				<span class="line line-left"></span>
+				Mission
+			</a>    		
+    	</div>
+    	<div class="link link-mission">
+			<span class="icon"></span>
+			<a href="#" class="button" data='My Mission list!'>
+				<span class="line line-top"></span>
+				<span class="line line-right"></span>
+				<span class="line line-bottom"></span>
+				<span class="line line-left"></span>
+				Mission
+			</a>    		
+    	</div>
+    	<div class="tip">
+    		<em></em><span></span>
+    	</div>
+      </div>
+    <script type="text/javascript">
+    window.onload=function(){
+    	$('.link .button').hover(function(){
+    		var title=$(this).attr('data');
+    		$('.tip em').text(title);
+    		var pos=$(this).position().left;
+    		var dis=($('.tip').outerWidth-$(this).outerWidth)/2;
+    		var l=pos-dis;
+    		$('.tip').css({'left':pos+'px'}).stop(true,true).animate({'top':140 ,'opacity':1,},300);
+    	},function(){
+    		
+    		$('.tip').stop(true,true).animate({'top':100 ,'opacity':0});
+    
+    		
+    	})
+    	
+    }
+    var index=1;
+    function next(){
+    	if (index==6){
+    		return
+    	}
+    	console.log(index);
+    	var curPage=document.getElementById('page'+index);
+    	curPage.style.webkitTransform='rotateX(-110deg)';
+    	index++;
+    	var nextPage=document.getElementById('page'+index);
+    	nextPage.style.webkitTransform='rotateX(0deg)';
+    }
+    function pre(){
+    	if(index==1){
+    		return
+    	}
+    	var curPage=document.getElementById('page'+index);
+    	curPage.style.webkitTransform='rotateX(110deg)';
+    	index--;
+    	var prePage=document.getElementById('page'+index);
+    	prePage.style.webkitTransform='rotateX(0deg)';
+    }
+    </script>
+</body>
+
+</html>
